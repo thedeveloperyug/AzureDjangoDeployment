@@ -8,6 +8,14 @@ class ProjectManager(models.Model):
     def __str__(self):
         return self.name
 
+class TestModel(models.Model): 
+    name = models.CharField(unique=True, max_length=100)
+    created = models.DateTimeField(auto_now_add=True)
+    modified = models.DateTimeField(auto_now=True)
+
+    def __str__(self):
+        return self.name
+
 class Employees(models.Model): 
     name = models.CharField(unique=True, max_length=100)
     created = models.DateTimeField(auto_now_add=True)
